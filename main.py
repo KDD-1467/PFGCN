@@ -85,21 +85,7 @@ if __name__=='__main__':
     train_dataset = textDataset(args.dataset, 'train')
     valid_dataset = textDataset(args.dataset, 'valid')
     test_dataset = textDataset(args.dataset, 'test')
-    # train_length = int(len(train_dataset))
-    # valid_length = int(len(dataset)*0.1)
-    # valid_length = len(dataset) - train_length
-    # test_length = len(dataset) - train_length - valid_length
     field_dims = train_dataset.field_dims
-    # train_indice = list(range(0, train_length))
-    # valid_indice = list(range(train_length, len(dataset)))
-    # test_indice = list(range(train_length + valid_length, len(dataset)))
-    # train_sampler = SubsetRandomSampler(train_indice)
-    # valid_sampler = SubsetRandomSampler(valid_indice)
-    # test_sampler = SubsetRandomSampler(test_indice)
-    # train_data_loader = DataLoader(dataset, batch_size = args.train_size, num_workers=8, sampler=train_sampler)
-    # valid_data_loader = DataLoader(dataset, batch_size = args.test_size, num_workers=8, sampler=valid_sampler)
-    # test_data_loader = DataLoader(dataset, batch_size=args.test_size, num_workers=8, sampler=test_sampler)
-    # train_dataset, valid_dataset = torch.utils.data.random_split(dataset, (train_length, valid_length))
     train_data_loader = DataLoader(train_dataset, batch_size = args.train_size, num_workers=8)
     valid_data_loader = DataLoader(valid_dataset, batch_size = args.test_size, num_workers=8)
     test_data_loader = DataLoader(test_dataset, batch_size = args.test_size, num_workers=8)
